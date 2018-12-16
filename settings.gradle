@@ -1,0 +1,6 @@
+rootProject.name = 'alertengine'
+include 'alert-persister'
+include 'alert-domain'
+include 'alert-sender'
+include 'alert-constants'
+
