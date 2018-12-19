@@ -3,4 +3,6 @@ include 'alert-persister'
 include 'alert-domain'
 include 'alert-sender'
 include 'alert-constants'
+include 'alert-dto'
+include 'alert-persister-api'
 

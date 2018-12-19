@@ -1,7 +1,8 @@
 package com.pmobile.alertengine.controller;
 
-import com.pmobile.alertengine.domain.AlertEntity;
-import com.pmobile.alertengine.dao.AlertEntityRepository;
+
+import com.pmobile.alertengine.dto.AlertDto;
+import com.pmobile.alertengine.persister.api.AlertPersisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,16 +15,18 @@ import java.util.Date;
 public class TestController {
 
     @Autowired
-    private AlertEntityRepository alertEntityRepository;
+    private AlertPersisterService alertPersisterService;
 
     @GetMapping("/add")
     private String add(){
-        AlertEntity alertEntity = new AlertEntity();
+        AlertDto alertEntity = new AlertDto();
         alertEntity.setBody("dfdsfgdfgd");
         alertEntity.getTags().add(new Date().toString());
         alertEntity.getDetails().put("türkçe karakter deneme", "değeri şğüIqçööö");
-        alertEntityRepository.save(alertEntity);
-        return alertEntity.getId();
+
+
+        String save = alertPersisterService.save(alertEntity);
+        return save;
     }
 
 }
