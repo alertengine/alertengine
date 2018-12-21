@@ -5,4 +5,5 @@ include 'alert-sender'
 include 'alert-constants'
 include 'alert-dto'
 include 'alert-persister-api'
+include 'alert-sender-api'
 
