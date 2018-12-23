@@ -27,7 +27,7 @@ public class AlertSubscriptionEntity extends BaseEntity {
     @Column(name = "active_from", nullable = false)
     private Instant activeFrom = Instant.now();
 
-    @Column(name = "activeUntil", nullable = false)
+    @Column(name = "active_until", nullable = false)
     private Instant activeUntil = Instant.now();
 
     @Column(name = "name")
