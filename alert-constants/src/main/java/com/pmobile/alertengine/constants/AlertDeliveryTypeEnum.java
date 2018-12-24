@@ -1,5 +1,8 @@
 package com.pmobile.alertengine.constants;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum AlertDeliveryTypeEnum implements IntegerValuedEnum {
 
     EMAIL(0, "Email"), PHONE_SMS(1, "Phone SMS"), REST_REQUEST(2, "REST Request");
@@ -13,6 +16,7 @@ public enum AlertDeliveryTypeEnum implements IntegerValuedEnum {
     }
 
     @Override
+    @JsonValue
     public Integer getEnumId() {
         return enumId;
     }
@@ -22,6 +26,7 @@ public enum AlertDeliveryTypeEnum implements IntegerValuedEnum {
         return description;
     }
 
+    @JsonCreator
     public static AlertDeliveryTypeEnum fromEnumId(Integer dbData) {
         for (AlertDeliveryTypeEnum type : values()) {
             if (type.getEnumId().equals(dbData)) {
