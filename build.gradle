@@ -29,6 +29,8 @@ dependencies {
 	implementation project(':alert-dto')
 	implementation project(':alert-persister')
 	implementation project(':alert-persister-api')
+	implementation project(':alert-sender')
+	implementation project(':alert-sender-api')
 
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation('org.springframework.boot:spring-boot-starter-actuator')

@@ -3,15 +3,8 @@ package com.pmobile.alertengine;
 
 import com.pmobile.alertengine.dao.AlertEntityRepository;
 import com.pmobile.alertengine.domain.AlertEntity;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -27,10 +20,10 @@ public class SearchTest extends H2IntegrationTestConfig {
     private AlertEntityRepository alertEntityRepository;
 
     @Autowired
-    private  EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Test
-    public void save(){
+    public void save() {
 
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<AlertEntity> query = criteriaBuilder.createQuery(AlertEntity.class);
