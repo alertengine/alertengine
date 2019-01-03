@@ -22,6 +22,6 @@ public class BodySpecification implements Specification<AlertEntity> {
     @Override
     public Predicate toPredicate(Root<AlertEntity> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
         String body = bodyMatchingCondition.getBody();
-        return criteriaBuilder.like(root.get("body"), body == null ? "%%" : "%" + body+ "%");
+        return criteriaBuilder.like(criteriaBuilder.upper(root.get("body")), body == null ? "%%" : "%" + body.toUpperCase()+ "%");
     }
 }
